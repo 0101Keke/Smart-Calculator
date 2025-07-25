@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="justify-container">
+            <div class="select-container">
+                <select id="operation-select" class="select">
+                    <div class="option"><option value="Programmer">Programmer</option></div>
+                    <div class="option"><option value="Scientific">Scientific</option></div>
+                </select>
+            </div>
+            <div class="iput-container">
+                <input type="text" id="equation" class="input" placeholder="Enter your expression here">
+                <input type="text" id="result" class="input" placeholder="Result" readonly>
+            </div>
+            <div class="PSD-container">
+                <div class="default-container">
+                    <div class="btn">
+                        <button id="btnOpenBracket">(</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnCloseBracket">)</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnPlusMinus">&#177;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnAllClear">AC</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnClear">C</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnBack">&larr;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnDivide">&#247;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnSeven">7</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnEight">8</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnNine">9</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnMultiply">&#215;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnFour">4</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnFive">5</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnSix">6</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnMinus">&#8722;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnOne">1</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnTwo">2</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnThree">3</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnPlus">&#43;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnDZero">00</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnZero">0</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnPoint">.</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnEquals">&#61;</button>
+                    </div>
+                </div>
+                <div class="scientific-container">
+                    <div class="btn">
+                        <button id="btnPercent">&#37;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnLog">log</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnLoggit">ln</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnEuler">e</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnReciprocal">1/x</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnSquareRoot">&#8730;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnSquare">x&#178;</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnAnyPower">x<sup>y</sup></button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnExponential">e<sup>x</sup></button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnSin">sin</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnCos">cos</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnTan">tan</button>
+                    </div>
+                    <div class="btn">
+                        <button id="btnPi">&pi;</button>
+                    </div>
+                </div>
+                <div class="programmer-container">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input type="radio" name="base" class="input-check" value="bin">
+                        </div>
+                        <span id="btnBin" class="input-group-text" type="button">BIN</span>
+                        <input type="text" id="input-bin" class="form-control input-bin" placeholder="Binary" readonly>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input type="radio" name="base" class="input-check" value="dec">
+                        </div>
+                        <span id="btnDec" class="input-group-text" type="button">DEC</span>
+                        <input type="text" id="input-dec" class="form-control input-dec" placeholder="Decimal" readonly>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input type="radio" name="base" class="input-check" value="hex">
+                        </div>
+                        <span id="btnHex" class="input-group-text" type="button">HEX</span>
+                        <input type="text" id="input-hex" class="form-control input-hex" placeholder="Hexadecimal" readonly>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input type="radio" name="base" class="input-check" value="oct">
+                        </div>
+                        <span id="btnOct" class="input-group-text" type="button">OCT</span>
+                        <input type="text" id="input-oct" class="form-control input-oct" placeholder="Octal" readonly>
+                    </div>
+                    <div class="programmer-btns">
+                        <div class="btn">
+                            <button id="btnAnd">AND</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnNand">NAND</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnOr">OR</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnNor">NOR</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnXor">XOR</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnNot">NOT</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnMuchLT">&#8810;</button>
+                        </div>
+                        <div class="btn">
+                            <button id="btnMuchGT">&#8811;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
