@@ -1,0 +1,122 @@
+/* General container styles */
+.calculator-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+
+/* Input fields */
+.input {
+    width: 100%;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background: #f3f4f6;
+    box-sizing: border-box;
+}
+
+/* Programmer group styling */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    padding: 2px 0;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    min-width: 60px;
+    background: none;
+    border: none;
+    color: #444;
+    font-size: 1em;
+    padding: 0 8px;
+}
+
+.input-check {
+    margin-right: 8px;
+    accent-color: #1976d2;
+}
+
+.form-control {
+    border: none;
+    background: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1em;
+    color: #222;
+    width: 100%;
+    padding: 6px 0;
+    outline: none;
+}
+
+/* Highlight selected radio group */
+.input-group input[type="radio"]:checked + .input-group-text,
+.input-group input[type="radio"]:checked ~ .form-control {
+    background: #e3f2fd;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin: 4px;
+}
+
+.btn button {
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn button:active,
+.btn button:focus {
+    background: #1976d2;
+    outline: none;
+}
+
+.btn button#btnEquals {
+    background: #1976d2;
+    color: #fff;
+}
+
+.btn button#btnClear {
+    background: #e53935;
+    color: #fff;
+}
+
+.btn button#btnAllClear {
+    background: #e53935;
+    color: #fff;
+}
+
+/* Group containers */
+.default-container,
+.scientific-container,
+.programmer-container {
+    margin-top: 16px;
+    display: none;
+}
+
+.default-container {
+    display: block;
+}
+
+/* Show/hide containers based on selection */
+.calculator-container .active {
+    display: block !important;
+}
