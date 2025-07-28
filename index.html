@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Calculator</title>
     <link rel="stylesheet" href="style.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
 </head>
 <body>
     <div class="calculator-container">
@@ -22,13 +24,13 @@
             <div class="PSD-container">
                 <div class="default-container">
                     <div class="btn">
-                        <button id="btnOpenBracket">(</button>
+                        <button id="btnOpenBracket" data-inserted="(">(</button>
                     </div>
                     <div class="btn">
-                        <button id="btnCloseBracket">)</button>
+                        <button id="btnCloseBracket" data-inserted=")">)</button>
                     </div>
                     <div class="btn">
-                        <button id="btnPlusMinus">&#177;</button>
+                        <button id="btnPlusMinus" data-inserted="&#177;">&#177;</button>
                     </div>
                     <div class="btn">
                         <button id="btnAllClear">AC</button>
@@ -37,55 +39,55 @@
                         <button id="btnClear">C</button>
                     </div>
                     <div class="btn">
-                        <button id="btnBack">&larr;</button>
+                        <button id="btnBack" data-inserted="&larr;">&larr;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnDivide">&#247;</button>
+                        <button id="btnDivide" data-inserted="&#247;">&#247;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnSeven">7</button>
+                        <button id="btnSeven" data-inserted="7">7</button>
                     </div>
                     <div class="btn">
-                        <button id="btnEight">8</button>
+                        <button id="btnEight" data-inserted="8">8</button>
                     </div>
                     <div class="btn">
-                        <button id="btnNine">9</button>
+                        <button id="btnNine" data-inserted="9">9</button>
                     </div>
                     <div class="btn">
-                        <button id="btnMultiply">&#215;</button>
+                        <button id="btnMultiply" data-inserted="&#215;">&#215;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnFour">4</button>
+                        <button id="btnFour" data-inserted="4">4</button>
                     </div>
                     <div class="btn">
-                        <button id="btnFive">5</button>
+                        <button id="btnFive" data-inserted="5">5</button>
                     </div>
                     <div class="btn">
-                        <button id="btnSix">6</button>
+                        <button id="btnSix" data-inserted="6">6</button>
                     </div>
                     <div class="btn">
-                        <button id="btnMinus">&#8722;</button>
+                        <button id="btnMinus" data-inserted="&#8722;">&#8722;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnOne">1</button>
+                        <button id="btnOne" data-inserted="1">1</button>
                     </div>
                     <div class="btn">
-                        <button id="btnTwo">2</button>
+                        <button id="btnTwo" data-inserted="2">2</button>
                     </div>
                     <div class="btn">
-                        <button id="btnThree">3</button>
+                        <button id="btnThree" data-inserted="3">3</button>
                     </div>
                     <div class="btn">
-                        <button id="btnPlus">&#43;</button>
+                        <button id="btnPlus" data-inserted="&#43;">&#43;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnDZero">00</button>
+                        <button id="btnDZero" data-inserted="00">00</button>
                     </div>
                     <div class="btn">
-                        <button id="btnZero">0</button>
+                        <button id="btnZero" data-inserted="0">0</button>
                     </div>
                     <div class="btn">
-                        <button id="btnPoint">.</button>
+                        <button id="btnPoint" data-inserted=".">.</button>
                     </div>
                     <div class="btn">
                         <button id="btnEquals">&#61;</button>
@@ -93,43 +95,43 @@
                 </div>
                 <div class="scientific-container">
                     <div class="btn">
-                        <button id="btnPercent">&#37;</button>
+                        <button id="btnPercent" data-inserted="&#37;">&#37;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnLog">log</button>
+                        <button id="btnLog" data-inserted="log(">log</button>
                     </div>
                     <div class="btn">
-                        <button id="btnLoggit">ln</button>
+                        <button id="btnLoggit" data-inserted="ln(">ln</button>
                     </div>
                     <div class="btn">
-                        <button id="btnEuler">e</button>
+                        <button id="btnEuler" data-inserted="e">e</button>
                     </div>
                     <div class="btn">
-                        <button id="btnReciprocal">1/x</button>
+                        <button id="btnReciprocal" data-inserted="1/(">1/x</button>
                     </div>
                     <div class="btn">
-                        <button id="btnSquareRoot">&#8730;</button>
+                        <button id="btnSquareRoot" data-inserted="sqrt(">&#8730;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnSquare">x&#178;</button>
+                        <button id="btnSquare" data-inserted="x^2">x&#178;</button>
                     </div>
                     <div class="btn">
-                        <button id="btnAnyPower">x<sup>y</sup></button>
+                        <button id="btnAnyPower" data-inserted="x^">x<sup>y</sup></button>
                     </div>
                     <div class="btn">
-                        <button id="btnExponential">e<sup>x</sup></button>
+                        <button id="btnExponential" data-inserted="e^">e<sup>x</sup></button>
                     </div>
                     <div class="btn">
-                        <button id="btnSin">sin</button>
+                        <button id="btnSin" data-inserted="sin(">sin</button>
                     </div>
                     <div class="btn">
-                        <button id="btnCos">cos</button>
+                        <button id="btnCos" data-inserted="cos(">cos</button>
                     </div>
                     <div class="btn">
-                        <button id="btnTan">tan</button>
+                        <button id="btnTan" data-inserted="tan(">tan</button>
                     </div>
                     <div class="btn">
-                        <button id="btnPi">&pi;</button>
+                        <button id="btnPi" data-inserted="&pi;">&pi;</button>
                     </div>
                 </div>
                 <div class="programmer-container">
@@ -163,28 +165,28 @@
                     </div>
                     <div class="programmer-btns">
                         <div class="btn">
-                            <button id="btnAnd">AND</button>
+                            <button id="btnAnd" data-bitwise="AND">AND</button>
                         </div>
                         <div class="btn">
-                            <button id="btnNand">NAND</button>
+                            <button id="btnNand" data-bitwise="NAND">NAND</button>
                         </div>
                         <div class="btn">
-                            <button id="btnOr">OR</button>
+                            <button id="btnOr" data-bitwise="OR">OR</button>
                         </div>
                         <div class="btn">
-                            <button id="btnNor">NOR</button>
+                            <button id="btnNor" data-bitwise="NOR">NOR</button>
                         </div>
                         <div class="btn">
-                            <button id="btnXor">XOR</button>
+                            <button id="btnXor" data-bitwise="XOR">XOR</button>
                         </div>
                         <div class="btn">
-                            <button id="btnNot">NOT</button>
+                            <button id="btnNot" data-bitwise="NOT">NOT</button>
                         </div>
                         <div class="btn">
-                            <button id="btnMuchLT">&#8810;</button>
+                            <button id="btnMuchLT" data-bitwise="<<">&#8810;</button>
                         </div>
                         <div class="btn">
-                            <button id="btnMuchGT">&#8811;</button>
+                            <button id="btnMuchGT" data-bitwise=">>">&#8811;</button>
                         </div>
                     </div>
                 </div>
